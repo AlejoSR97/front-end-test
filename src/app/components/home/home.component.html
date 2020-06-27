@@ -1,0 +1,48 @@
+<div class="col-12">
+    <div class="row bg-green p-3 align-items-center">
+        <div class="col-8">
+            <h1>Experimentality</h1>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+            <input type="text" class="form-control bg-green" *ngIf="searchView==true">
+            <button class="btn m-0" (click)="toggleSearch()">
+                <i class="mr-3"
+                    [ngClass]="{'ri-search-2-line':searchView==false, 'ri-close-line':searchView==true}"></i>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-white">LISTA DE VIDEOS</h3>
+            <div class="row">
+                <div class="col-3" *ngFor="let video of videos; let indice = index">
+                    <a (click)="toggleVideo(indice)">
+                        <div style="position: relative;">
+                            <iframe class="embed-responsive-item" style="z-index: 1;" [src]="mySecureVideo(indice)"
+                                frameborder="0" allowfullscreen></iframe>
+                            <div
+                                style="position:absolute; top: 0; left: 0; width:98%; height:97%;background-color:aliceblue;opacity:0.1;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="wrapper">
+                <div class="content">
+                    <iframe class="embed-responsive-item" style="width: 100%; height: 100%;" frameborder="0"
+                        [src]="urlActual" allowfullscreen="true"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <hr class="bg-light-green">
+            <h3 class="text-white">NOMBRE</h3>
+            <hr class="bg-light-green">
+            <p class="text-white">DESCRIPCION</p>
+        </div>
+    </div>
+</div>
