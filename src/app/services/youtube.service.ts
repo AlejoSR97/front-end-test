@@ -13,7 +13,7 @@ export class YoutubeService {
   ) { }
 
   getListOfVideos() {
-    const url = 'https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=6&key=' + this.apikey;
+    const url = 'https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=6&part=snippet&key=' + this.apikey;
     return this.http.get(url);
   }
 }
