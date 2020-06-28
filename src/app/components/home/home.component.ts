@@ -66,4 +66,8 @@ export class HomeComponent implements OnInit {
     console.log('toggle search');
     this.searchView = !this.searchView;
   }
+
+  searchVideo(event) {
+    console.log(event.target.value);
+  }
 }

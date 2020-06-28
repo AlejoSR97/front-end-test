@@ -4,7 +4,7 @@
             <h1>My Experimental player</h1>
         </div>
         <div class="col-4 d-flex justify-content-end">
-            <input type="text" class="form-control bg-green" *ngIf="searchView==true">
+            <input type="text" class="form-control bg-green" (keydown)=searchVideo($event) *ngIf="searchView==true">
             <button class="btn m-0" (click)="toggleSearch()">
                 <i class="mr-3"
                     [ngClass]="{'ri-search-2-line':searchView==false, 'ri-close-line':searchView==true}"></i>

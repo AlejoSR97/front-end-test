@@ -14,7 +14,7 @@ export class Snippet {
     description: string;
     thumbnails: any;
     channelTitle: string;
-    tags: string[]
+    tags: string[];
     categoryId: string;
     liveBroadcastContent: string;
     localized: any;
