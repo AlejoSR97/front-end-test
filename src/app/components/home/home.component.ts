@@ -393,6 +393,7 @@ export class HomeComponent implements OnInit {
   };
 
   currentYear: number;
+  currentSlide = 0;
   searchView = false;
   isMobileResolution: boolean;
   urlActual: any;
@@ -451,6 +452,26 @@ export class HomeComponent implements OnInit {
   mySecureVideo(index: number) {
     console.log('secure');
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.videos[index].url);
+  }
+
+  prevSlide() {
+    if (this.currentSlide === 0) {
+      this.currentSlide = this.videos.length - 1;
+    } else {
+      this.currentSlide -= 1;
+    }
+  }
+
+  nextSlide() {
+    if (this.currentSlide === this.videos.length - 1) {
+      this.currentSlide = 0;
+    } else {
+      this.currentSlide += 1;
+    }
+  }
+
+  hideSlide(index: number) {
+    return index === this.currentSlide ? false : true;
   }
 
   toggleVideo(indice: number) {
