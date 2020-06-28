@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { VideoComponent } from './components/video/video.component';
 
 import { YoutubeService } from './services/youtube.service';
 
@@ -14,7 +13,6 @@ import { YoutubeService } from './services/youtube.service';
   declarations: [
     AppComponent,
     HomeComponent,
-    VideoComponent
   ],
   imports: [
     BrowserModule,

@@ -6,14 +6,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class YoutubeService {
 
-  apikey = 'AIzaSyDCBQDvLk4teLKuy5YJJVDTGeb-BaOrcnQ';
+  apikey = 'AIzaSyApuk26qtOBpHAQW8nUnP-c-6UVk56b1Z4';
 
   constructor(
     public http: HttpClient,
   ) { }
 
-  getListOfVideos() {
-    const url = 'https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=6&part=snippet&key=' + this.apikey;
-    return this.http.get(url);
+  getListOfVideos(nombre?: string) {
+    if (nombre !== '' && nombre != null) {
+      // tslint:disable-next-line: max-line-length
+      const url = 'https://www.googleapis.com/youtube/v3/search?maxResults=6&part=snippet&key=' + this.apikey + '&q=' + nombre;
+      console.log('Peticion: ', url);
+      return this.http.get(url);
+    } else {
+      const url = 'https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=6&part=snippet&key=' + this.apikey;
+      console.log('Peticion: ', url);
+      return this.http.get(url);
+    }
   }
 }

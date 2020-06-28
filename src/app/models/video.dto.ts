@@ -2,7 +2,7 @@
 export class Video {
     kind: string;
     etag: string;
-    id: string;
+    id: any;
     url: any;
     snippet: Snippet;
 }
