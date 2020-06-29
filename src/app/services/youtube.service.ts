@@ -4,24 +4,26 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+/// Service that make requirements to youtube API and returns the response
 export class YoutubeService {
-
+  /// Project api key to request data from youtube
   apikey = 'AIzaSyApuk26qtOBpHAQW8nUnP-c-6UVk56b1Z4';
-
+  /// Endpoint url
+  endpointUrl = 'https://www.googleapis.com/youtube/v3/';
   constructor(
     public http: HttpClient,
   ) { }
 
-  getListOfVideos(nombre?: string) {
-    if (nombre !== '' && nombre != null) {
-      // tslint:disable-next-line: max-line-length
-      const url = 'https://www.googleapis.com/youtube/v3/search?maxResults=6&part=snippet&key=' + this.apikey + '&q=' + nombre;
-      console.log('Peticion: ', url);
-      return this.http.get(url);
+  /// Method that calls youtube API to get list of
+  /// videos that will be shown on the page
+  /// name: optional argument to search videos by its names
+  getListOfVideos(name?: string) {
+    /// Validation if name has some value then make request with that value
+    /// otherwise the method will requeste most popular videos
+    if (name !== '' && name != null) {
+      return this.http.get(this.endpointUrl + 'search?maxResults=6&part=snippet&key=' + this.apikey + '&q=' + name);
     } else {
-      const url = 'https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&maxResults=6&part=snippet&key=' + this.apikey;
-      console.log('Peticion: ', url);
-      return this.http.get(url);
+      return this.http.get(this.endpointUrl + 'videos?chart=mostPopular&maxResults=6&part=snippet&key=' + this.apikey);
     }
   }
 }

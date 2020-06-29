@@ -1,6 +1,12 @@
 # FrontEndTest
 
+Don't forget to install npm packages
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+
+This project's objective is to show a list of videos to a user
+The user is able to watch main video, read main video information (name and description),
+change main video and search for more videos
 
 ## Development server
 

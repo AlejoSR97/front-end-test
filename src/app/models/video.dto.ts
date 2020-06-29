@@ -1,4 +1,5 @@
 
+/// Model class for handling videos received from youtube
 export class Video {
     kind: string;
     etag: string;
@@ -7,6 +8,7 @@ export class Video {
     snippet: Snippet;
 }
 
+/// Model class for handling snippet property from videos
 export class Snippet {
     publishedAt: string;
     channelId: string;
