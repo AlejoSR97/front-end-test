@@ -8,6 +8,8 @@ This project's objective is to show a list of videos to a user
 The user is able to watch main video, read main video information (name and description),
 change main video and search for more videos
 
+To see all responsive changes the page needs to be reloaded
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
