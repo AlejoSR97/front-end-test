@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 /// Service that make requirements to youtube API and returns the response
 export class YoutubeService {
   /// Project api key to request data from youtube
-  apikey = 'AIzaSyApuk26qtOBpHAQW8nUnP-c-6UVk56b1Z4';
+  apikey = 'AIzaSyBhJlU1xqW71z7h_P-6k67IsihTRM714qU';
   /// Endpoint url
   endpointUrl = 'https://www.googleapis.com/youtube/v3/';
   constructor(

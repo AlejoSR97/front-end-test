@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
     /// Initial load for list of videos
     this.youtubeService.getListOfVideos().subscribe(data => {
       let resp;
-      console.log('videos: ', data);
       resp = data;
       resp.items.forEach((video: Video) => {
         this.videos.push({
@@ -48,7 +47,6 @@ export class HomeComponent implements OnInit {
           snippet: video.snippet
         });
       });
-      console.log('videos: ', this.videos);
       this.currentUrl = this.mySecureVideo(0);
       this.currentName = this.videos[0].snippet.title;
       this.currentDescription = this.videos[0].snippet.description;
@@ -66,7 +64,6 @@ export class HomeComponent implements OnInit {
   /// Method to ensure url security
   mySecureVideo(index: number) {
     const url = this.sanitizer.bypassSecurityTrustResourceUrl(this.videos[index].url);
-    console.log(url);
     return url;
   }
 
